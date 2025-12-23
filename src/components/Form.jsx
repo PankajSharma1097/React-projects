@@ -37,11 +37,9 @@ const Form = () => {
     setData(copyData);
     setText('');
     setDetail('');
-  }
+  };
 
-  if (EditIndex ==null){
-    data
-  }
+
 
 const startEdit = (idx) => {
     // 1. Fill the inputs with the data of the note we want to edit
@@ -60,6 +58,13 @@ const startEdit = (idx) => {
     const copyData = [...data]
     copyData.splice(idx, 1)
     setData(copyData)
+
+    if (EditIndex=== idx){
+        setEditIndex(null)
+        setText('')
+        setDetail('')
+      
+    }
   }
 
 
